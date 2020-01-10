@@ -35,6 +35,13 @@ class Application extends Component{
         })
     }
 
+    skipStep = () => {
+        const { step } = this.state
+        this.setState({
+            step : step + 2
+        })
+    }
+    
     prevStep = () => {
         const { step } = this.state
         this.setState({
@@ -64,6 +71,7 @@ class Application extends Component{
             case 2: 
                 return <MainFloorType
                         nextStep={this.nextStep} 
+                        skipStep={this.skipStep} 
                         prevStep={this.prevStep} 
                         handleChange = {this.handleChange}
                         values={values}

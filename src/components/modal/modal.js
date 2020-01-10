@@ -9,21 +9,17 @@ class Modal extends Component {
         this.props.onClose && this.props.onClose(e);
     };
 
-  render() {
-
-    if(!this.props.show){
-        return null;
-    }
-    return (
-
-        <div>
-            <Application />
-            <button onClick={this.onClose}>Close</button>
-        </div>
+    render() {
         
-      
-
-    )
-  }
+        if(!this.props.show){
+            return null;
+        }
+        return (
+            <div>
+                <Application />
+                <button onClick={this.onClose}>Close</button>
+            </div>
+        )
+    }
 }
 export default Modal;

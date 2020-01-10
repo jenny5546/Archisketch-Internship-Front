@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Modal from '../modal/modal';
-
+import './_landing.scss'
 class Landing extends Component {
     
     state = {
