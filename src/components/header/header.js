@@ -37,8 +37,6 @@ const Header= ()=>{
                                     <img src={profile_dummy} className="profile__img" alt="profile_image"></img>
                                     <div className="profile__name">Jaeeun Lee</div>
                                 </span>
-                                
-                                
                             </a>
                         </li>
                     </ul>

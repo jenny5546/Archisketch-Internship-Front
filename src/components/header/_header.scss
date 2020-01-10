@@ -2,12 +2,13 @@
 @import '../../styles/_typography.scss';
 
 .header{
+
+    background: $bg_primary;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 99;
-    background: $bg_primary;
-
+    
     &__inner {
         width: 980px;
         position: relative;
@@ -47,6 +48,7 @@
         box-sizing: border-box;
     }
     &__link{
+
         font-family: $_base-font-family;
         font-weight: $black;
         text-decoration:none; 
@@ -54,8 +56,9 @@
         height: 62px;
         line-height: 33px;
         color: $font500;
-        font-size: 14px;
+        font-size: 15px;
         font-weight: 800;
+        letter-spacing: -0.8px;
         box-sizing: border-box;
 
         &--active{
@@ -65,16 +68,23 @@
     }
     
 }
+
 .profile{
+
     margin-right: 15px;
     margin-left: 40px;
+
     &__img{
         padding-top: 24px;
     }
+
     &__name{
+
         font-size: 13px;
         float: right;
         font-family: $_base-font-family;
-        font-weight: $medium;
+        font-weight: $bold;
+        letter-spacing: -0.5px;
+        
     }
 }
