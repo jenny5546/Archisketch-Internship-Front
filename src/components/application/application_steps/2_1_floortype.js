@@ -1,15 +1,13 @@
 import React, { Component } from 'react';
 
+
+
 class MainFloorType extends Component{
-
-    state = {
-        type: ''
-    }
-
-    saveAndContinue = () => {
-        console.log(this.state)
-        if  (this.state === "Residential")  this.props.skipStep();
-        if  (this.state === "Commercial") this.props.nextStep();
+    
+    
+    saveAndContinue(e){
+        if  (e.target.value === "Residential")  this.props.skipStep();
+        if  (e.target.value === "Commercial") this.props.nextStep();
     }
 
     back  = (e) => {
@@ -17,10 +15,6 @@ class MainFloorType extends Component{
         this.props.prevStep();
     }
 
-    _handleClick =(val) =>{
-        this.setState(val);
-        console.log(val);
-    }
 
     render(){
 
@@ -28,8 +22,9 @@ class MainFloorType extends Component{
             <div>
                 Residential/Commercial
                 <button onClick={this.back}> Back </button>
-                <button onClick={this._handleClick(this.value)} value="Residential"> Residential </button>
-                <button onClick={this._handleClick(this.value)} value="Commercial"> Commercial </button>
+                {/* <input type='text' onChange={this.props.handleChange('floorType')}></input> */}
+                <input type="button" onClick={e => {this.saveAndContinue(e, "value"); this.props.handleButton(e)}} value="Residential"/>
+                <input type="button" onClick={e => {this.saveAndContinue(e, "value"); this.props.handleButton(e)}} value="Commercial"/>
             </div>
         )
     }

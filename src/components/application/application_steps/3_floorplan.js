@@ -5,10 +5,11 @@ class FloorPlan extends Component{
     saveAndContinue = (e) =>{
         e.preventDefault()
         this.props.nextStep()
+        
     }
     back  = (e) => {
         e.preventDefault();
-        this.props.prevStep();
+        (this.props.values.floorType) === "Residential" ? this.props.prev2Step(): this.props.prevStep();
     }
 
     render(){

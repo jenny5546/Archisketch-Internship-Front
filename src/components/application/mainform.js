@@ -49,8 +49,19 @@ class Application extends Component{
         })
     }
 
+    prev2Step = () =>{
+        const { step } = this.state
+        this.setState({
+            step : step - 2
+        })
+    }
+
     handleChange = input => event => {
         this.setState({ [input] : event.target.value })
+    }
+    handleButton =event =>{
+        const value= event.target.value;
+        this.setState({floorType: value});
     }
 
     render(){
@@ -74,6 +85,7 @@ class Application extends Component{
                         skipStep={this.skipStep} 
                         prevStep={this.prevStep} 
                         handleChange = {this.handleChange}
+                        handleButton = {this.handleButton}
                         values={values}
                         />
             case 3:
@@ -87,6 +99,7 @@ class Application extends Component{
                 return <FloorPlan
                         nextStep={this.nextStep} 
                         prevStep={this.prevStep} 
+                        prev2Step={this.prev2Step}
                         handleChange = {this.handleChange}
                         values={values}
                         />
