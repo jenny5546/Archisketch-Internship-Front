@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import MainTutorial from '../../tutorial/maintutorial'
 
 class Tutorial extends Component{
 
@@ -10,7 +11,7 @@ class Tutorial extends Component{
     render(){
         return(
             <div>
-                Tutorial
+                <MainTutorial/>
                 <button onClick={this.skip}>
                     Skip
                 </button>

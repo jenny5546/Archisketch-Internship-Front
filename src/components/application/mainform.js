@@ -11,7 +11,7 @@ import Summary from './application_steps/6_summary';
 
 class Application extends Component{
 
-
+    
     state = {
 
         step: 1,
