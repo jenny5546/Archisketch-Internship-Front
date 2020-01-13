@@ -14,7 +14,8 @@ class Summary extends Component{
     render(){
         return(
             <div>
-                Summary
+                {/* 불러오기 */}
+                {this.props.values.additionalRequest}
                 <button onClick={this.back}> Back </button>
                 <button onClick={this.saveAndContinue}> Confirm Payment </button>
             </div>

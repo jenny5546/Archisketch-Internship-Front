@@ -15,16 +15,27 @@ class Application extends Component{
     state = {
 
         step: 1,
-        floorType: '',
-        commercialType: '',
-        floorPlanFile: '',
-        floorNumber: '',
-        floorSize: '',
-        floorHeight: '',
-        floorAddress: '',
-        floorTheme:'',
-        additionalRequest: '',
-        contactInfo: ''
+        //step 2_1
+        floorType: '', //button
+
+        //step 2_2
+        commercialType: '', //button
+
+        //step 3
+        floorPlanFile: '', //input
+        floorNumber: '', //input
+        floorSize: '', //input
+        floorHeight: '', //input
+        floorAddress: '', //input
+
+        //step 4
+        floorTheme:'', //button
+
+        //step 5
+        additionalRequest: '', //input
+        //step 6
+        contactInfo: '' //input with placeholder of account email
+
 
     }
 
@@ -35,7 +46,7 @@ class Application extends Component{
         })
     }
 
-    skipStep = () => {
+    next2Step = () => {
         const { step } = this.state
         this.setState({
             step : step + 2
@@ -58,10 +69,11 @@ class Application extends Component{
 
     handleChange = input => event => {
         this.setState({ [input] : event.target.value })
+        console.log(this.state.additionalRequest)
     }
-    handleButton =event =>{
-        const value= event.target.value;
-        this.setState({floorType: value});
+
+    handleButton = (event) =>{
+        this.setState({ [event.target.name]: event.target.value});
     }
 
     render(){
@@ -74,62 +86,63 @@ class Application extends Component{
         switch(step){
             case 1:
                 return <Tutorial
-                        nextStep={this.nextStep} 
-                        prevStep={this.prevStep} 
-                        handleChange = {this.handleChange}
-                        values={values}
+                            nextStep={this.nextStep} 
+                            prevStep={this.prevStep} 
+                            handleChange = {this.handleChange}
+                            values={values}
                         />
             case 2: 
                 return <MainFloorType
-                        nextStep={this.nextStep} 
-                        skipStep={this.skipStep} 
-                        prevStep={this.prevStep} 
-                        handleChange = {this.handleChange}
-                        handleButton = {this.handleButton}
-                        values={values}
+                            nextStep={this.nextStep} 
+                            next2Step={this.next2Step} 
+                            prevStep={this.prevStep} 
+                            handleChange = {this.handleChange}
+                            handleButton = {this.handleButton}
+                            values={values}
                         />
             case 3:
                 return <SubFloorType
-                        nextStep={this.nextStep} 
-                        prevStep={this.prevStep} 
-                        handleChange = {this.handleChange}
-                        values={values}
+                            nextStep={this.nextStep} 
+                            prevStep={this.prevStep} 
+                            handleChange = {this.handleChange}
+                            handleButton = {this.handleButton}
+                            values={values}
                         />
             case 4:
                 return <FloorPlan
-                        nextStep={this.nextStep} 
-                        prevStep={this.prevStep} 
-                        prev2Step={this.prev2Step}
-                        handleChange = {this.handleChange}
-                        values={values}
+                            nextStep={this.nextStep} 
+                            prevStep={this.prevStep} 
+                            prev2Step={this.prev2Step}
+                            handleChange = {this.handleChange}
+                            values={values}
                         />
             case 5: 
                 return <FloorTheme
-                        nextStep={this.nextStep} 
-                        prevStep={this.prevStep} 
-                        handleChange = {this.handleChange}
-                        values={values}
+                            nextStep={this.nextStep} 
+                            prevStep={this.prevStep} 
+                            handleChange = {this.handleChange}
+                            values={values}
                         />
             case 6: 
                 return <AdditionalRequests
-                        nextStep={this.nextStep} 
-                        prevStep={this.prevStep} 
-                        handleChange = {this.handleChange}
-                        values={values}
+                            nextStep={this.nextStep} 
+                            prevStep={this.prevStep} 
+                            handleChange = {this.handleChange}
+                            values={values}
                         />
             case 7: 
                 return <Summary
-                        nextStep={this.nextStep} 
-                        prevStep={this.prevStep} 
-                        handleChange = {this.handleChange}
-                        values={values}
+                            nextStep={this.nextStep} 
+                            prevStep={this.prevStep} 
+                            handleChange = {this.handleChange}
+                            values={values}
                         />
             default:
                 return <Tutorial
-                        nextStep={this.nextStep} 
-                        prevStep={this.prevStep} 
-                        handleChange = {this.handleChange}
-                        values={values}
+                            nextStep={this.nextStep} 
+                            prevStep={this.prevStep} 
+                            handleChange = {this.handleChange}
+                            values={values}
                         />
         }
         

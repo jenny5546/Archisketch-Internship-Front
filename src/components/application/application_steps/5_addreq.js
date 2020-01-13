@@ -15,7 +15,14 @@ class AdditionalRequests extends Component{
 
         return(
             <div>
-                Additional Requests
+                <div>
+                    <label> Additional Requests </label>
+                    <input
+                        type="text"
+                        name = "additionalRequest"
+                        onChange={ this.props.handleChange('additionalRequest') }
+                    />
+                </div>
                 <button onClick={this.back}> Back </button>
                 <button onClick={this.saveAndContinue}> Next </button>
             </div>

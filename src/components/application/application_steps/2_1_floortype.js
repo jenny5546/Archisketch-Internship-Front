@@ -9,8 +9,8 @@ class MainFloorType extends Component{
         hoverCom: false
     }
     saveAndContinue(e){
-        if  (e.target.name === "residential")  this.props.skipStep();
-        if  (e.target.name === "commercial") this.props.nextStep();
+        if  (e.target.value === "Residential")  this.props.next2Step();
+        if  (e.target.value === "Commercial") this.props.nextStep();
     }
 
     back  = (e) => {
@@ -27,35 +27,35 @@ class MainFloorType extends Component{
     toggleHoverCom=()=>{
         this.setState({
             hoverCom: !this.state.hoverCom
-        })
-        
+        })  
     }
-    
-
     render(){
-
         return(
             <div>
                 1. Floor Type
                 <button onClick={this.back}> Back </button>
-                {/* <input type='text' onChange={this.props.handleChange('floorType')}></input> */}
-                <input 
+                
+                <button
                     type="button" 
-                    name = "residential"
+                    name = "floorType"
                     onClick={e => {this.saveAndContinue(e, "value"); this.props.handleButton(e)}} 
                     onMouseEnter={ this.toggleHoverRes } 
                     onMouseLeave= { this.toggleHoverRes } 
-                    value= {this.state.hoverRes ? 'Single, Multi-Family Homes, Condominiums, Townhouses and Dormatories' : 'Residential'}
-                />
+                    value= "Residential"
+                >
+                    {this.state.hoverRes ? 'Single, Multi-Family Homes, Condominiums, Townhouses and Dormatories' : 'Residential'}
+                </button>
 
-                <input 
+                <button
                     type="button" 
-                    name = "commercial"
+                    name = "floorType"
                     onClick={e => {this.saveAndContinue(e, "value"); this.props.handleButton(e)}} 
                     onMouseEnter={ this.toggleHoverCom } 
                     onMouseLeave= { this.toggleHoverCom } 
-                    value= {this.state.hoverCom ? 'Offices, Restaurant/ Cafes, Shops, Hotels, or special purpose buildings (schools, hospitals and etc)' : 'Commercial'}
-                />
+                    value= "Commercial"
+                >
+                    {this.state.hoverCom ? 'Offices, Restaurant/ Cafes, Shops, Hotels, or special purpose buildings (schools, hospitals and etc)' : 'Commercial'}
+                </button>
 
             </div>
         )

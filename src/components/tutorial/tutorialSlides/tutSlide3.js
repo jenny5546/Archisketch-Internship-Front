@@ -10,7 +10,7 @@ const LastTutorial=(props)=>{
 
     return(
         <div>
-            Last Tutorial
+            3. Feel Free to tell us Whatever else you Want
             <button onClick={back}> Back </button>
         </div>
     );

@@ -9,7 +9,7 @@ const FirstTutorial =(props)=>{
     }
     return(
         <div>
-            Tutorial One 
+            1. Upload Your Floor Plan Image
             <button onClick={saveAndContinue}> Next </button>
         </div>
     );

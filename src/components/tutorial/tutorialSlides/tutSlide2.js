@@ -15,7 +15,7 @@ const SecondTutorial=(props)=>{
     
     return(
         <div>
-            Second Tutorial
+            2. Choose Floor Styles
             <button onClick={back}> Back </button>
             <button onClick={saveAndContinue}> Next </button>
         </div>
