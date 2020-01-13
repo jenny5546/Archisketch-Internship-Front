@@ -4,9 +4,13 @@ import ThemeSelector from '../../themeSelector/themeSelector'
 class FloorTheme extends Component{
 
     pickedThemes =(value) =>{
-        this.props.handleThemeChoices(value);
+        
         // console.log(value);
-        console.log(this.props.values.floorSelectedTheme.length)
+        // console.log(this.props.values.floorSelectedTheme.length)
+        let srclist = []
+        for (var i=0; i<value.length; i++) {srclist.push(value[i].src)}
+        console.log(srclist)
+        this.props.handleThemeChoices(srclist);
         console.log(this.props.values.floorSelectedTheme);
 
     }

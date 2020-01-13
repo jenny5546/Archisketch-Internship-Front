@@ -8,7 +8,6 @@ class FloorPlan extends Component{
     saveAndContinue = (e) =>{
         e.preventDefault()
         this.props.nextStep()
-        console.log(this.props.values.floorHeightUnit)
         
     }
     back  = (e) => {
@@ -33,6 +32,7 @@ class FloorPlan extends Component{
                         type="file"
                         name = "floorPlan"
                         onChange={ this.props.handlePlanFile }
+                        
                     />
                 </div>
                 <div>
@@ -42,6 +42,7 @@ class FloorPlan extends Component{
                         defaultValue = "1"
                         name = "floorNumber"
                         onChange={ this.props.handleChange('floorNumber') }
+                        value = {this.props.values.floorNumber}
                     />
                     floors
                     
@@ -52,6 +53,7 @@ class FloorPlan extends Component{
                         type="text"
                         name = "floorSize"
                         onChange={ this.props.handleChange('floorSize') }
+                        value = {this.props.values.floorSize}
                     />
                     <select name="floorSizeUnit" onChange={this.props.handleChange('floorSizeUnit')}>
                         <option value="">Select Unit</option>
@@ -65,6 +67,7 @@ class FloorPlan extends Component{
                         type="text"
                         name = "floorHeight"
                         onChange={ this.props.handleChange('floorHeight') }
+                        value = {this.props.values.floorHeight}
                     />
                     <select name="floorHeightUnit" onChange={this.props.handleChange('floorHeightUnit')}>
                         <option value="">Select Unit</option>

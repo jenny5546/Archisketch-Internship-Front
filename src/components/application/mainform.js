@@ -26,9 +26,9 @@ class Application extends Component{
         floorPlanUrl: '',
         floorNumber: '', //input
         floorSize: '', //input
-        floorSizeUnit: '', //select
+        floorSizeUnit: null, //select
         floorHeight: '', //input
-        floorHeightUnit: '', //select
+        floorHeightUnit: null, //select
         floorAddress: '', //input
 
         //step 4
@@ -94,9 +94,7 @@ class Application extends Component{
     }
 
     handleThemeChoices = (value) =>{
-
-        this.setState({floorSelectedTheme : JSON.stringify(value)})
-        
+        this.setState({floorSelectedTheme : value})
     }
 
     render(){
