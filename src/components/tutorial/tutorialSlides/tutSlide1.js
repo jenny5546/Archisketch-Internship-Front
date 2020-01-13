@@ -4,11 +4,9 @@ const FirstTutorial =(props)=>{
     
     const saveAndContinue = (e) =>{
         e.preventDefault()
-        // console.log(props)
         props.nextStep()
         
     }
-    
     return(
         <div>
             Tutorial One 

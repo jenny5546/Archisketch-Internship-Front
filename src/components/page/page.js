@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Modal from '../modal/modal';
-import './_landing.scss'
-class Landing extends Component {
+import './_page.scss'
+class Page extends Component {
     
     state = {
         show: false
@@ -45,4 +45,4 @@ class Landing extends Component {
     
 }
 
-export default Landing;
+export default Page;

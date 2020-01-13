@@ -13,7 +13,6 @@ const MainTutorial=()=>{
     const prevStep=()=>{
         setStep(step-1);
     }
-    
     return(
         
         <div>

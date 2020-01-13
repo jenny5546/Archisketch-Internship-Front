@@ -1,13 +1,13 @@
 import React from 'react';
 import Header from './components/header/header';
-import Landing from './components/landing/landing';
+import Page from './components/page/page';
 import './App.scss';
 
 function App() {
   return (
     <div className="App">
       <Header />
-      <Landing />
+      <Page />
     </div>
   );
 }
