@@ -3,9 +3,12 @@ import React, { Component } from 'react';
 
 class FloorPlan extends Component{
 
+
+
     saveAndContinue = (e) =>{
         e.preventDefault()
         this.props.nextStep()
+        console.log(this.props.values.floorHeightUnit)
         
     }
     back  = (e) => {
@@ -17,11 +20,21 @@ class FloorPlan extends Component{
         return(
             <div>
                 <div>
+
+                    {/* https://basketdeveloper.tistory.com/55 백 파고 연동하기 */}
+
                     <label>1. Upload Floor Plan</label>
+                    <div>
+                        {this.props.values.floorPlan ? (
+                            <img src={this.props.values.floorPlanUrl} alt="floorplan"></img>
+                        ): (
+                            <div> not uploaded yet</div>
+                        )}
+                    </div>
                     <input
                         type="file"
-                        name = "floorPlanFile"
-                        onChange={ this.props.handleChange('floorPlanFile') }
+                        name = "floorPlan"
+                        onChange={ this.props.handleFile }
                     />
                 </div>
                 <div>
@@ -32,6 +45,8 @@ class FloorPlan extends Component{
                         name = "floorNumber"
                         onChange={ this.props.handleChange('floorNumber') }
                     />
+                    floors
+                    
                 </div>
                 <div>
                     <label>3. Size of floor </label>
@@ -40,9 +55,10 @@ class FloorPlan extends Component{
                         name = "floorSize"
                         onChange={ this.props.handleChange('floorSize') }
                     />
-                    <select name="floorSizeUnit">
-                        <option value="meters">m^2</option>
-                        <option value="feet">feet</option>
+                    <select name="floorSizeUnit" onChange={this.props.handleChange('floorSizeUnit')}>
+                        <option value="">Select Unit</option>
+                        <option value="m^2">m^2</option>
+                        <option value="ft^2">feet</option>
                     </select>
                 </div>
                 <div>
@@ -52,9 +68,10 @@ class FloorPlan extends Component{
                         name = "floorHeight"
                         onChange={ this.props.handleChange('floorHeight') }
                     />
-                    <select name="floorHeightUnit">
-                        <option value="meters">m</option>
-                        <option value="feet">feet</option>
+                    <select name="floorHeightUnit" onChange={this.props.handleChange('floorHeightUnit')}>
+                        <option value="">Select Unit</option>
+                        <option value="m">m</option>
+                        <option value="ft">feet</option>
                     </select>
                 </div>
                 <div>
@@ -65,8 +82,6 @@ class FloorPlan extends Component{
                         onChange={ this.props.handleChange('floorAddress') }
                     />
                 </div>
-                
-
 
                 <button onClick={this.back}> Back </button>
                 <button onClick={this.saveAndContinue}> Next </button>

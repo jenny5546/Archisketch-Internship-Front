@@ -22,10 +22,13 @@ class Application extends Component{
         commercialType: '', //button
 
         //step 3
-        floorPlanFile: '', //input
+        floorPlan: null, //input
+        floorPlanUrl: '',
         floorNumber: '', //input
         floorSize: '', //input
+        floorSizeUnit: '', //select
         floorHeight: '', //input
+        floorHeightUnit: '', //select
         floorAddress: '', //input
 
         //step 4
@@ -66,21 +69,26 @@ class Application extends Component{
             step : step - 2
         })
     }
-
     handleChange = input => event => {
         this.setState({ [input] : event.target.value })
-        console.log(this.state.additionalRequest)
     }
 
     handleButton = (event) =>{
         this.setState({ [event.target.name]: event.target.value});
     }
 
+    handleFile = (e) => {
+        if (e.target.files[0]) {
+            this.setState({ floorPlan: e.target.files[0] })
+            this.setState({ floorPlanUrl: URL.createObjectURL(e.target.files[0])})
+        }
+    }
+
     render(){
 
         const {step} = this.state;
-        const {floorType, commercialType, floorPlanFile, floorNumber,floorSize,floorHeight, floorAddress, floorTheme, additionalRequest, contactInfo} = this.state;
-        const values= {floorType, commercialType, floorPlanFile, floorNumber,floorSize,floorHeight, floorAddress, floorTheme, additionalRequest, contactInfo};
+        const {floorType, commercialType, floorPlan, floorPlanUrl, floorNumber,floorSize, floorSizeUnit, floorHeight, floorHeightUnit, floorAddress, floorTheme, additionalRequest, contactInfo} = this.state;
+        const values= {floorType, commercialType, floorPlan, floorPlanUrl, floorNumber,floorSize, floorSizeUnit, floorHeight, floorHeightUnit, floorAddress, floorTheme, additionalRequest, contactInfo};
         
 
         switch(step){
@@ -114,6 +122,7 @@ class Application extends Component{
                             prevStep={this.prevStep} 
                             prev2Step={this.prev2Step}
                             handleChange = {this.handleChange}
+                            handleFile = {this.handleFile}
                             values={values}
                         />
             case 5: 
