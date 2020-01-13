@@ -15,19 +15,27 @@ class ImagePicker extends Component {
   }
 
   handleImageClick(image) {
+
     const { multiple, onPick } = this.props
     const pickedImage = multiple ? this.state.picked : Map()
-    const newerPickedImage = 
-      pickedImage.has(image.value) ? 
-        pickedImage.delete(image.value) : 
-          pickedImage.set(image.value, image.src)
-          
-    this.setState({picked: newerPickedImage})
-
     const pickedImageToArray = []
-    newerPickedImage.map((image, i) => pickedImageToArray.push({src: image, value: i}))
+
     
-    onPick(multiple ? pickedImageToArray : pickedImageToArray[0])
+    const newerPickedImage = 
+    pickedImage.has(image.value)  ? 
+      pickedImage.delete(image.value) : 
+        pickedImage.set(image.value, image.src)
+  
+    if (newerPickedImage.size <=3){
+      this.setState({picked: newerPickedImage})
+      newerPickedImage.map((image, i) => pickedImageToArray.push({src: image, value: i})) 
+      onPick(multiple ? pickedImageToArray : pickedImageToArray[0])
+    }
+    else {
+      alert("Sorry, You chose more than 3 images!")
+    }
+    
+    
   }
 
   renderImage(image, i) {

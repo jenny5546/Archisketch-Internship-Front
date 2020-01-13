@@ -3,8 +3,6 @@ import React, { Component } from 'react';
 
 class FloorPlan extends Component{
 
-
-
     saveAndContinue = (e) =>{
         e.preventDefault()
         this.props.nextStep()
@@ -19,7 +17,6 @@ class FloorPlan extends Component{
         return(
             <div>
                 <div>
-
                     <label>1. Upload Floor Plan</label>
                     <div>
                         {this.props.values.floorPlan ? (

@@ -22,11 +22,18 @@ class Summary extends Component{
                 floorSize : {this.props.values.floorSize} {this.props.values.floorSizeUnit} <br></br>
                 floorHeight : {this.props.values.floorHeight} {this.props.values.floorHeightUnit} <br></br>
                 floorAddress : {this.props.values.floorAddress}   <br></br>
-                floorSelectedTheme : {this.props.values.floorSelectedTheme.map(items =>{
-                    return (
-                        <div><img src={items} alt="selected-styles"></img></div>
-                    )
-                })}   <br></br>
+                floorSelectedTheme : 
+
+                {this.props.values.floorSelectedTheme.length !== 0? 
+                    this.props.values.floorSelectedTheme.map(items =>{
+                        return (
+                            <div><img src={items} alt="selected-style"></img></div>
+                        )
+                    }) :
+                    <img src={this.props.values.floorThemeUrl} alt='uploaded-style'></img>
+                }
+
+                
                 additionalRequest: {this.props.values.additionalRequest}  <br></br>
                 contactInfo:     <br></br>    
                 <button onClick={this.back}> Back </button>

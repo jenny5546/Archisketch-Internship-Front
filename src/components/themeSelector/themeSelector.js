@@ -19,13 +19,16 @@ class ThemeSelector extends Component {
         images: []
       }
     }
-
-    async onPickImages(images) {
-        await this.setState({images})
-        this.props.pickedThemes(this.state.images);
+    
+   
+    onPickImages(images) {
+        this.setState({images},()=>{
+          this.props.pickedThemes(this.state.images)
+          console.log(images)
+        })
+        
     }
     
-  
     render() {
       return (
         <div>

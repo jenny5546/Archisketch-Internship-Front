@@ -17,10 +17,8 @@ class Application extends Component{
         step: 1,
         //step 2_1
         floorType: '', //button
-
         //step 2_2
         commercialType: '', //button
-
         //step 3
         floorPlan: null, //input
         floorPlanUrl: '',
@@ -30,18 +28,14 @@ class Application extends Component{
         floorHeight: '', //input
         floorHeightUnit: null, //select
         floorAddress: '', //input
-
         //step 4
         floorSelectedTheme: [],
         floorTheme: null, //button
         floorThemeUrl:'',
-
         //step 5
         additionalRequest: '', //input
         //step 6
         contactInfo: '' //input with placeholder of account email
-
-
     }
 
     nextStep = () => {
