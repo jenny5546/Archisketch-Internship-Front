@@ -21,8 +21,6 @@ class FloorPlan extends Component{
             <div>
                 <div>
 
-                    {/* https://basketdeveloper.tistory.com/55 백 파고 연동하기 */}
-
                     <label>1. Upload Floor Plan</label>
                     <div>
                         {this.props.values.floorPlan ? (
@@ -34,7 +32,7 @@ class FloorPlan extends Component{
                     <input
                         type="file"
                         name = "floorPlan"
-                        onChange={ this.props.handleFile }
+                        onChange={ this.props.handlePlanFile }
                     />
                 </div>
                 <div>

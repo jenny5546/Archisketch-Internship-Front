@@ -32,7 +32,9 @@ class Application extends Component{
         floorAddress: '', //input
 
         //step 4
-        floorTheme:[], //button
+        floorSelectedTheme: [],
+        floorTheme: null, //button
+        floorThemeUrl:'',
 
         //step 5
         additionalRequest: '', //input
@@ -69,26 +71,39 @@ class Application extends Component{
             step : step - 2
         })
     }
+
     handleChange = input => event => {
         this.setState({ [input] : event.target.value })
     }
 
-    handleButton = (event) =>{
+    handleButton = event => {
         this.setState({ [event.target.name]: event.target.value});
     }
 
-    handleFile = (e) => {
+    handlePlanFile = (e) => {
         if (e.target.files[0]) {
             this.setState({ floorPlan: e.target.files[0] })
             this.setState({ floorPlanUrl: URL.createObjectURL(e.target.files[0])})
         }
     }
+    handleThemeFile = (e) => {
+        if (e.target.files[0]) {
+            this.setState({ floorTheme: e.target.files[0] })
+            this.setState({ floorThemeUrl: URL.createObjectURL(e.target.files[0])})
+        }
+    }
+
+    handleThemeChoices = (value) =>{
+
+        this.setState({floorSelectedTheme : JSON.stringify(value)})
+        
+    }
 
     render(){
 
         const {step} = this.state;
-        const {floorType, commercialType, floorPlan, floorPlanUrl, floorNumber,floorSize, floorSizeUnit, floorHeight, floorHeightUnit, floorAddress, floorTheme, additionalRequest, contactInfo} = this.state;
-        const values= {floorType, commercialType, floorPlan, floorPlanUrl, floorNumber,floorSize, floorSizeUnit, floorHeight, floorHeightUnit, floorAddress, floorTheme, additionalRequest, contactInfo};
+        const {floorType, commercialType, floorPlan, floorPlanUrl, floorNumber,floorSize, floorSizeUnit, floorHeight, floorHeightUnit, floorAddress, floorSelectedTheme, floorTheme, floorThemeUrl, additionalRequest, contactInfo} = this.state;
+        const values= {floorType, commercialType, floorPlan, floorPlanUrl, floorNumber,floorSize, floorSizeUnit, floorHeight, floorHeightUnit, floorAddress, floorSelectedTheme, floorTheme, floorThemeUrl, additionalRequest, contactInfo};
         
 
         switch(step){
@@ -96,7 +111,6 @@ class Application extends Component{
                 return <Tutorial
                             nextStep={this.nextStep} 
                             prevStep={this.prevStep} 
-                            handleChange = {this.handleChange}
                             values={values}
                         />
             case 2: 
@@ -104,7 +118,6 @@ class Application extends Component{
                             nextStep={this.nextStep} 
                             next2Step={this.next2Step} 
                             prevStep={this.prevStep} 
-                            handleChange = {this.handleChange}
                             handleButton = {this.handleButton}
                             values={values}
                         />
@@ -122,14 +135,15 @@ class Application extends Component{
                             prevStep={this.prevStep} 
                             prev2Step={this.prev2Step}
                             handleChange = {this.handleChange}
-                            handleFile = {this.handleFile}
+                            handlePlanFile = {this.handlePlanFile}
                             values={values}
                         />
             case 5: 
                 return <FloorTheme
                             nextStep={this.nextStep} 
                             prevStep={this.prevStep} 
-                            handleChange = {this.handleChange}
+                            handleThemeChoices ={this.handleThemeChoices}
+                            handleThemeFile = {this.handleThemeFile}
                             values={values}
                         />
             case 6: 
