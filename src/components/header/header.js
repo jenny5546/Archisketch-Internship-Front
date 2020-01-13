@@ -1,6 +1,6 @@
 import React from 'react';
-import profile_dummy from '../../static/img/profile_dummy.png';
-import logo from '../../static/img/Archisketch_Logo.png';
+import profile_dummy from '../../static/img/header/profile_dummy.png';
+import logo from '../../static/img/header/Archisketch_Logo.png';
 import './_header.scss';
 
 const Header= ()=>{

@@ -32,7 +32,7 @@ class Application extends Component{
         floorAddress: '', //input
 
         //step 4
-        floorTheme:'', //button
+        floorTheme:[], //button
 
         //step 5
         additionalRequest: '', //input
