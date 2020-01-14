@@ -5,24 +5,56 @@
 
     font-family: $_base-font-family;
     width: 100%;
-
+    
     &__container{
+
         float: right;
-        margin-top: 50px;
-        margin-right: 150px;
+        margin-top: 100px;
+        margin-right: 140px;
         
         &-header{
-            font-size: 28px;
+            font-size: 30px;
             font-weight: $light;
             letter-spacing: -1px;
             line-height: 8px;
         }
         &-content{
+            animation-duration: 2s;
+            animation-name: slidein;
             font-size: 18px;
             font-weight: $thin;
             line-height: 40px;
         }
-        
+        @keyframes slidein {
+            from {
+                margin-left: 5%;
+                width: 300%
+            }
+          
+            to {
+                margin-left: 0%;
+                width: 100%;
+              
+            }
+        }
+
+    }
+    &__slides{
+
+        &-img{
+            width: 450px;
+            // height: 230px;
+        }
+        &-imgbox{
+            position: absolute;
+            top: 18%;
+            left: 10%;
+        }
+    }
+    &__btn{
+        position: absolute;
+        top: 45%;
+        right: 5%;
     }
 
     &__skipbtn{
