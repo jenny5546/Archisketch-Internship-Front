@@ -1,0 +1,15 @@
+@import '../../styles/_colors.scss';
+@import '../../styles/_typography.scss';
+.modal{
+    position: absolute;
+    top: 15%;
+    left: 15%;
+    width: 70%;
+    height: 65%;
+    z-index: 30;
+    background-color: $bg_primary;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    &__closebtn{
+        float: right;
+    }
+}

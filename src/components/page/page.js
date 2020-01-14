@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Modal from '../modal/modal';
 import './_page.scss'
+import gif from '../../static/img/landing_ani.gif';
+import background from '../../static/img/background_main.png';
 class Page extends Component {
     
     state = {
@@ -17,8 +19,9 @@ class Page extends Component {
         return(
             <div className="landing">
                 <div className="landing__innerwrap">
+                <img className="landing__background"src={background} alt="back"></img>
                     <div className="landing__image">
-                        {/* <img></img> */}
+                        <img className="landing__image-gif"src={gif} alt="gif"></img>
                     </div>
                     <div className="landing__message">
                         <hr className="landing__message-line"/>
@@ -33,14 +36,12 @@ class Page extends Component {
                             We create accurate 2D, 3D models of your floorplans and furnish them according to specifications.
                             With our expertise in interior design and technological edge, we promise you accurate and powerful digital spaces.
                         </div>
-                        
+
                         <button className="landing__button" onClick={e => {this.showModal();}}>
                         Click to Get Started
                         </button>
 
-                    </div>
-        
-                    
+                    </div>  
                     <div className="landing__modal">
                         <Modal show={this.state.show} onClose={this.showModal}/>
                     </div>
