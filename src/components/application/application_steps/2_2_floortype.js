@@ -13,7 +13,7 @@ class SubFloorType extends Component{
 
     render(){
         return(
-            <div>
+            <div className="application">
                 Floor Type Commercial
                 <button
                     type="button" 
@@ -56,11 +56,15 @@ class SubFloorType extends Component{
                         name = "commercialType"
                         onChange={ this.props.handleChange('commercialType') }
                     />
-                    <button onClick={this.saveAndContinue}> Next </button>
                 </div>
                 
 
-                <button onClick={this.back}> Back </button>
+                <div className="application__backbtn">
+                    <button onClick={this.back}> Back </button>
+                </div>
+                <div className="application__nextbtn">
+                    <button onClick={this.saveAndContinue}> Next </button>
+                </div>
                 
             </div>
         )

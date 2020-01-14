@@ -38,7 +38,7 @@ class Page extends Component {
                         </div>
 
                         <button className="landing__button" onClick={e => {this.showModal();}}>
-                        Click to Get Started
+                        Click to Get Started !
                         </button>
 
                     </div>  

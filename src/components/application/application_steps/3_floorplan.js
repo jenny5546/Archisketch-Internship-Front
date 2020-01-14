@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import progressbar from '../../../static/img/application/progress2.png';
 
 class FloorPlan extends Component{
 
@@ -15,7 +15,10 @@ class FloorPlan extends Component{
 
     render(){
         return(
-            <div>
+            <div className="application">
+                <div className="application__progressbar">
+                    <img className="application__progressbar-image" src={progressbar} alt="progress-bar"></img>
+                </div>
                 <div>
                     <label>1. Upload Floor Plan</label>
                     <div>
@@ -81,8 +84,13 @@ class FloorPlan extends Component{
                     />
                 </div>
 
-                <button onClick={this.back}> Back </button>
-                <button onClick={this.saveAndContinue}> Next </button>
+                <div className="application__backbtn">
+                    <button onClick={this.back}> Back </button>
+                </div>
+                <div className="application__nextbtn">
+                    <button> onClick={this.saveAndContinue}> Next </button>
+                </div>
+                
             </div>
         )
     }

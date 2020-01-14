@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import FirstTutorial from './tutorialSlides/tutSlide1';
 import SecondTutorial from './tutorialSlides/tutSlide2';
 import LastTutorial from './tutorialSlides/tutSlide3';
+import '../application/_form.scss'
 
 const MainTutorial=()=>{
     

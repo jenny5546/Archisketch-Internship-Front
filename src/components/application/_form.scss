@@ -1,0 +1,100 @@
+@import '../../styles/_colors.scss';
+@import '../../styles/_typography.scss';
+
+.tutorial{
+
+    font-family: $_base-font-family;
+    width: 100%;
+
+    &__container{
+        float: right;
+        margin-top: 50px;
+        margin-right: 150px;
+        
+        &-header{
+            font-size: 28px;
+            font-weight: $light;
+            letter-spacing: -1px;
+            line-height: 8px;
+        }
+        &-content{
+            font-size: 18px;
+            font-weight: $thin;
+            line-height: 40px;
+        }
+        
+    }
+
+    &__skipbtn{
+
+        width: 150px;
+        height: 40px;
+        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease 0s;
+        border-radius: 30px;
+        font-family: $_base-font-family;
+        font-weight: $bold;
+        position: absolute;
+        bottom: 5%;
+        right: 2%;
+        border: 0;
+        font-size: 15px;
+        color:$btn_whiteColor;
+        background-color: $mainColor_dark;
+        cursor: pointer;
+        &:hover{
+            box-shadow: 0px 15px 20px #6db2c580;
+            color: #fff;
+            transform: translateY(-7px);
+        }
+    }
+}
+.application{
+    font-family: $_base-font-family;
+
+    &__title{
+        position: absolute;
+        top: 5%;
+        left: 40%;
+        font-size: 30px;
+        font-weight: $bold;
+        color: rgb(63, 63, 63);
+    }
+    &__progressbar{
+        // margin-top: 30px;
+        // margin-left: 20%;
+        &-image{
+            width: 80%;
+            margin-left: 30%;
+            margin-top: 10px;
+        }
+    }
+
+    &__mood{
+        // overflow: hidden;
+        
+        &-img{
+
+            filter: brightness(80%);
+            max-width: 35%;
+            max-height: 100%;
+            display: block; /* remove extra space below image */
+            
+        }
+    }
+
+}
+
+.floortype {
+    position: absolute;
+    top: 10%;
+    left: 40%;
+    margin-top: 10px;
+    &__heading{
+        font-size: 18px;
+        margin-top: 10px;
+    }
+    &__btncontainer{
+        margin-left: 200px;
+    }
+}
