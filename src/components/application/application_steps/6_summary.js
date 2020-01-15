@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import progressbar from '../../../static/img/application/progress5.png';
 import background from '../../../static/img/application/background.png';
 import background2 from '../../../static/img/application/background2.png';
-import NavigateBeforeIcon from '@material-ui/icons/NavigateBefore';
-import NavigateNextIcon from '@material-ui/icons/NavigateNext';
+
 class Summary extends Component{
 
     saveAndContinue = (e) =>{ //얘는 마지막 단계니까 payment 로 이동하게 바꾸기
@@ -90,12 +89,10 @@ class Summary extends Component{
 
                 <div className="application__control">
                     <div className="application__control-back">
-                        <NavigateBeforeIcon fontSize="large"/>
-                        <button className="application__control-back--btn" onClick={this.back}> Edit Application </button>
+                        <button className="application__control-back--btn" onClick={this.back}> &lt; &nbsp; Back   </button>
                     </div> 
                     <div className="application__control-next">
                         <button className="application__control-next--btn" onClick={this.saveAndContinue}> Confirm Payment</button>
-                        <NavigateNextIcon fontSize="large"/>
                     </div> 
                 </div>
             </div>

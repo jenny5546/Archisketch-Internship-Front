@@ -32,7 +32,6 @@ class ThemeSelector extends Component {
     render() {
       return (
         <div>
-          <h1>Theme Picker</h1>
           <h3>Select a maximum of three items</h3>
           <ImagePicker 
             images={imageList.map((image, i) => ({src: image, value: i}))}

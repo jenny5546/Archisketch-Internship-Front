@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import progressbar from '../../../static/img/application/progress1.png';
 import background from '../../../static/img/application/background.png';
 import background2 from '../../../static/img/application/background2.png';
-import NavigateBeforeIcon from '@material-ui/icons/NavigateBefore';
+import bubble from '../../../static/img/application/bubble.png';
 
 
 class MainFloorType extends Component{
@@ -53,6 +53,7 @@ class MainFloorType extends Component{
 
                         <div className="floortype__heading">
                             Tell us the purpose of your floor
+                            <img style={{width: "45px", marginLeft: "8px"}} src={bubble} alt="bubble"></img>
                         </div>
 
                         <div className="floortype__btncontainer">
@@ -66,7 +67,7 @@ class MainFloorType extends Component{
                                     onMouseLeave= { this.toggleHoverRes } 
                                     value= "Residential"
                                 >
-                                    {this.state.hoverRes ? 'Single, Multi-Family Homes, Condominiums, Townhouses and Dormatories' : 'Residential'}
+                                    {this.state.hoverRes ? 'Single, Multi-Family Homes, Dormatories, Townhouses and Condominiums' : 'Residential'}
                                 </button> 
                             </div>
                             <div>
@@ -79,7 +80,7 @@ class MainFloorType extends Component{
                                     onMouseLeave= { this.toggleHoverCom } 
                                     value= "Commercial"
                                 >
-                                    {this.state.hoverCom ? 'Offices, Restaurant/ Cafes, Shops, Hotels, or special purpose buildings (schools, hospitals and etc)' : 'Commercial'}
+                                    {this.state.hoverCom ? 'Offices, Restaurant/ Cafes, Shops, Hotels, \n or special purpose buildings \n (schools, hospitals and etc)' : 'Commercial'}
                                 </button>
                             </div>     
                         </div>
@@ -89,8 +90,12 @@ class MainFloorType extends Component{
 
                 <div className="application__control">
                     <div className="application__control-back">
-                        <NavigateBeforeIcon fontSize="large"/>
-                        <button className="application__control-back--btn" onClick={this.back}> Back  </button>
+                        {/* <NavigateBeforeIcon fontSize="large"/> */}
+                        <button 
+                            className="application__control-back--btn" 
+                            onClick={this.back}> 
+                            &lt; &nbsp; Back  
+                        </button>
                     </div> 
                 </div>
                 

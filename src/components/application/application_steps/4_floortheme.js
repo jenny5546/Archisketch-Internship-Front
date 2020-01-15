@@ -3,8 +3,7 @@ import ThemeSelector from '../../themeSelector/themeSelector'
 import progressbar from '../../../static/img/application/progress3.png';
 import background from '../../../static/img/application/background.png';
 import background2 from '../../../static/img/application/background2.png';
-import NavigateBeforeIcon from '@material-ui/icons/NavigateBefore';
-import NavigateNextIcon from '@material-ui/icons/NavigateNext';
+import bubble from '../../../static/img/application/bubble.png';
 
 class FloorTheme extends Component{
 
@@ -42,6 +41,7 @@ class FloorTheme extends Component{
                     <div className="floortheme">
                         <div className="floortheme__heading">
                             Floor Theme
+                            <img style={{width: "45px", marginLeft: "8px"}} src={bubble} alt="bubble"></img>
                         </div>
 
                         <div className="floortheme__imagepicker">
@@ -77,12 +77,10 @@ class FloorTheme extends Component{
 
                 <div className="application__control">
                     <div className="application__control-back">
-                        <NavigateBeforeIcon fontSize="large"/>
-                        <button className="application__control-back--btn" onClick={this.back}> Back </button>
+                        <button className="application__control-back--btn" onClick={this.back}> &lt; &nbsp; Back   </button>
                     </div> 
                     <div className="application__control-next">
-                        <button className="application__control-next--btn" onClick={this.saveAndContinue}> Next </button>
-                        <NavigateNextIcon fontSize="large"/>
+                        <button className="application__control-next--btn" onClick={this.saveAndContinue}> Next &nbsp; &gt;</button>
                     </div> 
                 </div>
 

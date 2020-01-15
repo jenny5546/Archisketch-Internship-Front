@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import progressbar from '../../../static/img/application/progress1.png';
 import background from '../../../static/img/application/background.png';
 import background2 from '../../../static/img/application/background2.png';
-import NavigateBeforeIcon from '@material-ui/icons/NavigateBefore';
-import NavigateNextIcon from '@material-ui/icons/NavigateNext';
+import bubble from '../../../static/img/application/bubble.png';
 
 class SubFloorType extends Component{
     
@@ -34,51 +33,56 @@ class SubFloorType extends Component{
                     <div className="commercialtype">
                         <div className="commercialtype__heading">
                             Please Specify the type of your Commercial Floor
+                            <img style={{width: "40px", marginLeft: "8px"}} src={bubble} alt="bubble"></img>
                         </div>
                         <div className="commercialtype__formcontainer">
 
-                            <div className="commercialtype__formcontainer-btn">
+                            <div>
                                 <button
+                                    className="commercialtype__formcontainer-btn"
                                     type="button" 
                                     name = "commercialType"
                                     onClick={e => {this.saveAndContinue(e, "value"); this.props.handleButton(e)}} 
                                     value= "Office"
                                 >
-                                    1. Office
+                                    Office
                                 </button>
                             </div>
 
-                            <div className="commercialtype__formcontainer-btn">
+                            <div>
                                 <button
+                                    className="commercialtype__formcontainer-btn"
                                     type="button" 
                                     name = "commercialType"
                                     onClick={e => {this.saveAndContinue(e, "value"); this.props.handleButton(e)}} 
                                     value= "Restaurant/Cafe"
                                 >
-                                    2. Restaurant/Cafe
+                                    Restaurant/Cafe
                                 </button>
                             </div>
 
 
-                            <div className="commercialtype__formcontainer-btn">
+                            <div>
                                 <button
+                                    className="commercialtype__formcontainer-btn"
                                     type="button" 
                                     name = "commercialType"
                                     onClick={e => {this.saveAndContinue(e, "value"); this.props.handleButton(e)}} 
                                     value= "Shops"
                                 >
-                                    3. Shops
+                                    Shops
                                 </button>
                             </div>
 
-                            <div className="commercialtype__formcontainer-btn">
+                            <div >
                                 <button
+                                    className="commercialtype__formcontainer-btn"
                                     type="button" 
                                     name = "commercialType"
                                     onClick={e => {this.saveAndContinue(e, "value"); this.props.handleButton(e)}} 
                                     value= "Hotels"
                                 >
-                                    4. Hotels
+                                    Hotels
                                 </button>
                             </div>
                             
@@ -101,12 +105,10 @@ class SubFloorType extends Component{
                 
                 <div className="application__control">
                     <div className="application__control-back">
-                        <NavigateBeforeIcon fontSize="large"/>
-                        <button className="application__control-back--btn" onClick={this.back}> Edit Application </button>
+                        <button className="application__control-back--btn" onClick={this.back}> &lt; &nbsp; Back   </button>
                     </div> 
                     <div className="application__control-next">
-                        <button className="application__control-next--btn" onClick={this.saveAndContinue}> Confirm Payment</button>
-                        <NavigateNextIcon fontSize="large"/>
+                        <button className="application__control-next--btn" onClick={this.saveAndContinue}> Next &nbsp; &gt;</button>
                     </div> 
                 </div>
                 
