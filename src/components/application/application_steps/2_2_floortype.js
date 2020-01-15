@@ -86,17 +86,22 @@ class SubFloorType extends Component{
                                 </button>
                             </div>
                             
-                            <div className="commercialtype__formcontainer-input">
-                                <label>5.Others</label>
+                            
+
+                        </div> {/* commercialtype__btncontainer */}
+
+                        <div className="commercialtype__input">
+                                <label style={{fontSize: "12px", marginLeft: '12px', paddingTop: '5px', color: '#2c6372'}}>Not listed?</label>
+                                &nbsp;&nbsp;&nbsp;&nbsp;
                                 <input
                                     type="text"
-                                    placeholder = "type in the purpose of your floor"
+                                    style={{marginTop: '9px', fontSize: '13px', fontWeight: 'bold', color: "#2c6372", borderBottom: "1px solid #2c6372", borderTop: "none", borderRight: "none", borderLeft: "none", background: "transparent"}}
+                                    placeholder = "Type In Yourself"
                                     name = "commercialType"
                                     onChange={ this.props.handleChange('commercialType') }
                                 />
-                            </div>
+                        </div>
 
-                        </div> {/* commercialtype__btncontainer */}
 
                     </div> {/* commercialtype */}
                     
