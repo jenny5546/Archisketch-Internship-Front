@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import progressbar from '../../../static/img/application/progress2.png';
+import background from '../../../static/img/application/background.png';
+import background2 from '../../../static/img/application/background2.png';
+import NavigateBeforeIcon from '@material-ui/icons/NavigateBefore';
+import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 
 class FloorPlan extends Component{
 
@@ -20,7 +24,8 @@ class FloorPlan extends Component{
                 <div className="application__title">
                     Application
                 </div>
-
+                <img className="application__bigback" src={background} alt="back"></img>
+                <img className="application__miniback" src={background2} alt="back"></img>
                 <div className="application__progressbar">
                     <img className="application__progressbar-image" src={progressbar} alt="progress-bar"></img>
                 </div>
@@ -30,7 +35,7 @@ class FloorPlan extends Component{
                     <div className="floorplan">
 
                         <div className="floorplan__heading">
-                            2.Provide Information about your Floor 
+                            Provide Information about your Floor 
                         </div>
                         
                         <div className="floorplan__formcontainer">
@@ -116,10 +121,12 @@ class FloorPlan extends Component{
 
                 <div className="application__control">
                     <div className="application__control-back">
-                        <button onClick={this.back}> Back </button>
+                        <NavigateBeforeIcon fontSize="large"/>
+                        <button className="application__control-back--btn" onClick={this.back}> Back </button>
                     </div> 
                     <div className="application__control-next">
-                        <button onClick={this.saveAndContinue}> Next </button>
+                        <button className="application__control-next--btn" onClick={this.saveAndContinue}> Next </button>
+                        <NavigateNextIcon fontSize="large"/>
                     </div> 
                 </div>
                 
