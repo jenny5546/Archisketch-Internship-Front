@@ -251,6 +251,55 @@
         font-weight: $light;
         font-size: 20px;
     }
+    &__formcontainer{
+        margin-top: 20px;
+        display: flex;
+        &-file{
+            margin-left: 10px;
+        }
+        &-file > label{
+            font-size: 16px;
+            color: rgb(16, 73, 100);
+            letter-spacing: -1px;
+            font-weight: $medium;
+        }
+        &-inputwrap{
+            margin-left: 70px;
+            // margin-top: 20px;
+        }
+        &-input{
+            margin-bottom: 25px;
+            
+        
+        }
+
+        &-input > div > input[type=text]{
+            margin-top: 10px;
+            border-bottom: 1px dotted $mainColor_dark;
+            border-top: 0;
+            border-left: 0;
+            border-right: 0;
+           
+        }
+        &-input > div > input[type=number]{
+            border-bottom: 1px dotted $mainColor_dark;
+            border-radius: 10px;
+            border-top: 0;
+            border-left: 0;
+            border-right: 0;
+            margin-right: 10px
+            
+        }
+        
+        
+
+        &-input > label{
+            font-size: 16px;
+            color: rgb(16, 73, 100);
+            letter-spacing: -1px;
+            font-weight: $medium;
+        }
+    }
 }
 
 .floortheme{

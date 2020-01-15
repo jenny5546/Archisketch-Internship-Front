@@ -95,7 +95,7 @@ class SubFloorType extends Component{
                                 &nbsp;&nbsp;&nbsp;&nbsp;
                                 <input
                                     type="text"
-                                    style={{marginTop: '9px', fontSize: '13px', fontWeight: 'bold', color: "#2c6372", borderBottom: "1px solid #2c6372", borderTop: "none", borderRight: "none", borderLeft: "none", background: "transparent"}}
+                                    style={{marginTop: '9px', fontSize: '15px', fontWeight: 'lighter', color: "#2c6372", borderBottom: "1px solid #2c6372", borderTop: "none", borderRight: "none", borderLeft: "none", background: "transparent"}}
                                     placeholder = "Type In Yourself"
                                     name = "commercialType"
                                     onChange={ this.props.handleChange('commercialType') }
