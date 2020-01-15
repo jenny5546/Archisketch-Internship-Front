@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Modal from '../modal/modal';
 import './_page.scss'
 import gif from '../../static/img/landing_ani.gif';
+// import price from '../../static/img/pricing_table.png';
 import background from '../../static/img/background_main.png';
 class Page extends Component {
     
@@ -45,6 +46,8 @@ class Page extends Component {
                     <div className="landing__modal">
                         <Modal show={this.state.show} onClose={this.showModal}/>
                     </div>
+
+                    
                 </div>
                 
             </div> 

@@ -2,7 +2,7 @@
 @import '../../styles/_typography.scss';
 .modal{
     position: absolute;
-    overflow: hidden;
+    overflow: auto;
     animation-name: fadeIn;
     animation-duration: 0.5s;
     @keyframes fadeIn {

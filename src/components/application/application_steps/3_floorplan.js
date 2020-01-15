@@ -16,79 +16,111 @@ class FloorPlan extends Component{
     render(){
         return(
             <div className="application">
+
+                <div className="application__title">
+                    Application
+                </div>
+
                 <div className="application__progressbar">
                     <img className="application__progressbar-image" src={progressbar} alt="progress-bar"></img>
                 </div>
-                <div>
-                    <label>1. Upload Floor Plan</label>
-                    <div>
-                        {this.props.values.floorPlan ? (
-                            <img src={this.props.values.floorPlanUrl} alt="floorplan"></img>
-                        ): (
-                            <div> not uploaded yet</div>
-                        )}
-                    </div>
-                    <input
-                        type="file"
-                        name = "floorPlan"
-                        onChange={ this.props.handlePlanFile }
-                        
-                    />
-                </div>
-                <div>
-                    <label>2. Number of floors </label>
-                    <input
-                        type="number"
-                        defaultValue = "1"
-                        name = "floorNumber"
-                        onChange={ this.props.handleChange('floorNumber') }
-                        value = {this.props.values.floorNumber}
-                    />
-                    floors
-                    
-                </div>
-                <div>
-                    <label>3. Size of floor </label>
-                    <input
-                        type="text"
-                        name = "floorSize"
-                        onChange={ this.props.handleChange('floorSize') }
-                        value = {this.props.values.floorSize}
-                    />
-                    <select name="floorSizeUnit" onChange={this.props.handleChange('floorSizeUnit')}>
-                        <option value="">Select Unit</option>
-                        <option value="m^2">m^2</option>
-                        <option value="ft^2">feet</option>
-                    </select>
-                </div>
-                <div>
-                    <label>4. Floor Height </label>
-                    <input
-                        type="text"
-                        name = "floorHeight"
-                        onChange={ this.props.handleChange('floorHeight') }
-                        value = {this.props.values.floorHeight}
-                    />
-                    <select name="floorHeightUnit" onChange={this.props.handleChange('floorHeightUnit')}>
-                        <option value="">Select Unit</option>
-                        <option value="m">m</option>
-                        <option value="ft">feet</option>
-                    </select>
-                </div>
-                <div>
-                    <label>5. Address </label>
-                    <input
-                        type="text"
-                        name = "floorAddress"
-                        onChange={ this.props.handleChange('floorAddress') }
-                    />
-                </div>
+                
+                <div className="application__body">
 
-                <div className="application__backbtn">
-                    <button onClick={this.back}> Back </button>
-                </div>
-                <div className="application__nextbtn">
-                    <button> onClick={this.saveAndContinue}> Next </button>
+                    <div className="floorplan">
+
+                        <div className="floorplan__heading">
+                            2.Provide Information about your Floor 
+                        </div>
+                        
+                        <div className="floorplan__formcontainer">
+
+                            <div className="floorplan__formcontainer-file">
+                                <label>1. Upload Floor Plan</label>
+                                <div>
+                                    {this.props.values.floorPlan ? (
+                                        <img src={this.props.values.floorPlanUrl} alt="floorplan"></img>
+                                    ): (
+                                        <div> not uploaded yet</div>
+                                    )}
+                                </div>
+
+                                <input
+                                    type="file"
+                                    name = "floorPlan"
+                                    onChange={ this.props.handlePlanFile }
+                                    
+                                />
+                            </div>
+                            
+                            <div className="floorplan__formcontainer-input">
+                                <label>2. Number of floors </label>
+                                <input
+                                    type="number"
+                                    defaultValue = "1"
+                                    name = "floorNumber"
+                                    onChange={ this.props.handleChange('floorNumber') }
+                                    value = {this.props.values.floorNumber}
+                                />
+                                floors
+                                
+                            </div>
+
+                            <div className="floorplan__formcontainer-input">
+                                <label>3. Size of floor </label>
+                                <input
+                                    type="text"
+                                    name = "floorSize"
+                                    onChange={ this.props.handleChange('floorSize') }
+                                    value = {this.props.values.floorSize}
+                                />
+                                <select name="floorSizeUnit" onChange={this.props.handleChange('floorSizeUnit')}>
+                                    <option value="">Select Unit</option>
+                                    <option value="m^2">m^2</option>
+                                    <option value="ft^2">feet</option>
+                                </select>
+                            </div>
+
+                            <div className="floorplan__formcontainer-input">
+                                <label>4. Floor Height </label>
+                                <input
+                                    type="text"
+                                    name = "floorHeight"
+                                    onChange={ this.props.handleChange('floorHeight') }
+                                    value = {this.props.values.floorHeight}
+                                />
+                                <select name="floorHeightUnit" onChange={this.props.handleChange('floorHeightUnit')}>
+                                    <option value="">Select Unit</option>
+                                    <option value="m">m</option>
+                                    <option value="ft">feet</option>
+                                </select>
+                            </div>
+
+                            <div className="floorplan__formcontainer-input">
+                                <label>5. Address </label>
+                                <input
+                                    type="text"
+                                    name = "floorAddress"
+                                    onChange={ this.props.handleChange('floorAddress') }
+                                />
+                            </div>
+
+                        </div>  {/* floorplan__formcontainer */}
+                        
+                        
+                    </div> {/*floorplan*/}
+                    
+
+                </div> {/*application_body*/}
+                
+
+                <div className="application__control">
+                    <div className="application__control-back">
+                        <button onClick={this.back}> Back </button>
+                    </div> 
+                    <div className="application__control-next">
+                        <button onClick={this.saveAndContinue}> Next </button>
+                    </div> 
                 </div>
                 
             </div>

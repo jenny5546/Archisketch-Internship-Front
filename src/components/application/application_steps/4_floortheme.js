@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ThemeSelector from '../../themeSelector/themeSelector'
+import progressbar from '../../../static/img/application/progress3.png';
 
 class FloorTheme extends Component{
 
@@ -22,28 +23,61 @@ class FloorTheme extends Component{
 
     render(){
         return(
-            <div>
-                Floor Theme
-                <ThemeSelector pickedThemes={this.pickedThemes}/>
+            <div className="application">
+                <div className="application__title">
+                    Application
+                </div>
+                <div className="application__progressbar">
+                    <img className="application__progressbar-image" src={progressbar} alt="progress-bar"></img>
+                </div>
 
-                <div>
-                    Or Upload your Own Style
-                    <div>
-                            {this.props.values.floorTheme ? (
-                                <img src={this.props.values.floorThemeUrl} alt="floortheme"></img>
-                            ): (
-                                <div> not uploaded yet</div>
-                            )}
+                <div className="application__body">
+
+                    <div className="floortheme">
+                        <div className="floortheme__heading">
+                            Floor Theme
+                        </div>
+
+                        <div className="floortheme__imagepicker">
+                            <ThemeSelector pickedThemes={this.pickedThemes}/>
+                        </div>
+
+                        <div className="floortheme__imageuploader">
+                            
+                            <div className="floortheme__imageuploader-heading">
+                                Or Upload your Own Style
+                            </div>
+                            <div className="floortheme__imageuploader-wrap">
+
+                                <div>
+                                        {this.props.values.floorTheme ? (
+                                            <img src={this.props.values.floorThemeUrl} alt="floortheme"></img>
+                                        ): (
+                                            <div> not uploaded yet</div>
+                                        )}
+                                </div>
+                                <input
+                                        type="file"
+                                        name = "floorTheme"
+                                        onChange={ this.props.handleThemeFile }
+                                />
+                            </div>
+                            
+                        </div>
                     </div>
-                    <input
-                            type="file"
-                            name = "floorTheme"
-                            onChange={ this.props.handleThemeFile }
-                    />
                 </div>
                 
-                <button onClick={this.back}> Back </button>
-                <button onClick={this.saveAndContinue}> Next </button>
+                
+
+                <div className="application__control">
+                    <div className="application__control-back">
+                        <button onClick={this.back}> Back </button>
+                    </div> 
+                    <div className="application__control-next">
+                        <button onClick={this.saveAndContinue}> Next </button>
+                    </div> 
+                </div>
+
             </div>
         )
     }

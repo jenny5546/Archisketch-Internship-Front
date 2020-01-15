@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import progressbar from '../../../static/img/application/progress5.png';
 
 class Summary extends Component{
 
@@ -13,31 +14,82 @@ class Summary extends Component{
 
     render(){
         return(
-            <div>
-                {/* 불러오기 */}
-                floorType: {this.props.values.floorType} <br></br>
-                commercialType : {this.props.values.commercialType} <br></br>
-                floorPlan : <img src= {this.props.values.floorPlanUrl} alt="floorplan-summary"></img> <br></br>
-                floorNumber : {this.props.values.floorNumber} <br></br>
-                floorSize : {this.props.values.floorSize} {this.props.values.floorSizeUnit} <br></br>
-                floorHeight : {this.props.values.floorHeight} {this.props.values.floorHeightUnit} <br></br>
-                floorAddress : {this.props.values.floorAddress}   <br></br>
-                floorSelectedTheme : 
+            <div className="application">
 
-                {this.props.values.floorSelectedTheme.length !== 0? 
-                    this.props.values.floorSelectedTheme.map(items =>{
-                        return (
-                            <div><img src={items} alt="selected-style"></img></div>
-                        )
-                    }) :
-                    <img src={this.props.values.floorThemeUrl} alt='uploaded-style'></img>
-                }
+                <div className="application__title">
+                    Summary
+                </div>
 
+                <div className="application__progressbar">
+                    <img className="application__progressbar-image" src={progressbar} alt="progress-bar"></img>
+                </div>
+
+                <div className="application__body">
+
+                    <div className="summary">
+                        {/* 불러오기 */}
+                        <div className="summary__contents">
+                            <label>floorType: </label>
+                            {this.props.values.floorType} 
+                        </div>
+                        
+                        <div className="summary__contents">
+                            <label>commercialType: </label>
+                            {this.props.values.commercialType}
+                        </div>
+
+                        <div className="summary__contents">
+                            <label>floorPlan: </label>
+                            <img src= {this.props.values.floorPlanUrl} alt="floorplan-summary"></img>
+                        </div>
+                        <div className="summary__contents">
+                            <label>floorNumber: </label>
+                            {this.props.values.floorNumber}
+                        </div>
+                        <div className="summary__contents">
+                            <label>floorSize:  </label>
+                            {this.props.values.floorSize} {this.props.values.floorSizeUnit}
+                        </div>
+                        <div className="summary__contents">
+                            <label>floorHeight: </label>
+                            {this.props.values.floorHeight} {this.props.values.floorHeightUnit}
+                        </div>
+                        <div className="summary__contents">
+                            <label>floorAddress: </label>
+                            {this.props.values.floorAddress}
+                        </div>
+                        <div className="summary__contents">
+                            <label>floorSelectedTheme : </label>
+                            {this.props.values.floorSelectedTheme.length !== 0? 
+                            this.props.values.floorSelectedTheme.map(items =>{
+                                return (
+                                    <div><img src={items} alt="selected-style"></img></div>
+                                )
+                            }) :
+                            (<img src={this.props.values.floorThemeUrl} alt='uploaded-style'></img>)
+                        }
+                        </div>
+        
+                        <div className="summary__contents">
+                            <label>additionalRequest: </label>
+                            {this.props.values.additionalRequest} 
+                        </div>
+                        <div className="summary__contents">
+                            <label>contactInfo: </label>
+                            jenny5546@naver.com
+                        </div>
+                    </div>
+                     
+                </div>
                 
-                additionalRequest: {this.props.values.additionalRequest}  <br></br>
-                contactInfo:     <br></br>    
-                <button onClick={this.back}> Back </button>
-                <button onClick={this.saveAndContinue}> Confirm Payment </button>
+                <div className="application__control">
+                    <div className="application__control-back">
+                        <button onClick={this.back}> Edit Application </button>
+                    </div> 
+                    <div className="application__control-next">
+                        <button onClick={this.saveAndContinue}> Confirm Payment </button>
+                    </div> 
+                </div>
             </div>
         )
     }
