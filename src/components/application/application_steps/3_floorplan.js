@@ -65,7 +65,7 @@ class FloorPlan extends Component{
                                     <div style={{float: "right"}}>
                                     &nbsp;&nbsp;&nbsp;
                                     <input
-                                        style = {{width: "50px", height: "20px"}}
+                                        style = {{width: "50px", height: "20px", fontSize: "18px"}}
                                         type="number"
                                         defaultValue = "1"
                                         name = "floorNumber"
@@ -83,7 +83,7 @@ class FloorPlan extends Component{
                                     <div style={{float: "right"}}>
                                     
                                         <input
-                                            style = {{width: "70px", marginRight: "20px"}}
+                                            style = {{width: "70px", marginRight: "20px", fontSize: "18px"}}
                                             type="text"
                                             name = "floorSize"
                                             onChange={ this.props.handleChange('floorSize') }
@@ -104,7 +104,7 @@ class FloorPlan extends Component{
                                     <label> &nbsp; &nbsp; Floor Height &nbsp;&nbsp;&nbsp;</label>
                                     <div style={{float: "right"}}>
                                     <input
-                                        style = {{width: "70px", marginRight: "20px"}}
+                                        style = {{width: "70px", marginRight: "20px" , fontSize: "18px"}}
                                         type="text"
                                         name = "floorHeight"
                                         onChange={ this.props.handleChange('floorHeight') }
