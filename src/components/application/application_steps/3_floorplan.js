@@ -7,8 +7,12 @@ import bubble from '../../../static/img/application/bubble.png';
 class FloorPlan extends Component{
 
     saveAndContinue = (e) =>{
-        e.preventDefault()
-        this.props.nextStep()
+        e.preventDefault();
+
+        (this.props.values.floorPlan === null) || 
+        (this.props.values.floorSize === '') || 
+        (this.props.values.floorNumber ==='') ? 
+        alert('Please fill in the required questions properly'): this.props.nextStep();
         
     }
     back  = (e) => {
