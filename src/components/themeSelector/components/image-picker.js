@@ -40,19 +40,22 @@ class ImagePicker extends Component {
 
   renderImage(image, i) {
     return (
-      <Image 
+      <div style={{float:"left"}}>
+        <Image 
         src={image.src}
         isSelected={this.state.picked.has(image.value)} 
         onImageClick={() => this.handleImageClick(image)} 
         key={i}
       />
+      </div>
+      
     )
   }
 
   render() {
     const { images } = this.props
     return (
-      <div className="image_picker">
+      <div className="image_picker" style={{maxWidth: "740px",  maxHeight: "200px" ,overflow: "auto"}} >
         { images.map(this.renderImage) }
         <div className="clear"/>
       </div>

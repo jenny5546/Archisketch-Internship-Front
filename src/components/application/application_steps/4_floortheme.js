@@ -40,36 +40,39 @@ class FloorTheme extends Component{
 
                     <div className="floortheme">
                         <div className="floortheme__heading">
-                            Floor Theme
+                            Pick Floor Styles of your Choice
                             <img style={{width: "45px", marginLeft: "8px"}} src={bubble} alt="bubble"></img>
                         </div>
-
-                        <div className="floortheme__imagepicker">
-                            <ThemeSelector pickedThemes={this.pickedThemes}/>
-                        </div>
-
-                        <div className="floortheme__imageuploader">
-                            
-                            <div className="floortheme__imageuploader-heading">
-                                Or Upload your Own Style
+                        <div className="floortheme__body">
+                            <div className="floortheme__body-imagepicker">
+                                <ThemeSelector pickedThemes={this.pickedThemes}/>
                             </div>
-                            <div className="floortheme__imageuploader-wrap">
-
-                                <div>
-                                        {this.props.values.floorTheme ? (
-                                            <img src={this.props.values.floorThemeUrl} alt="floortheme"></img>
-                                        ): (
-                                            <div> not uploaded yet</div>
-                                        )}
+                            <div className="floortheme__body-imageuploader" style={{display: "flex"}} >
+                                
+                                <div className="floortheme__body-imageuploader-heading">
+                                    <p1 style={{fontSize: "18px", fontWeight: "bolder", color: "#5894a3"}}>Or</p1> Upload your Own Style
                                 </div>
-                                <input
-                                        type="file"
-                                        name = "floorTheme"
-                                        onChange={ this.props.handleThemeFile }
-                                />
+                                <div className="floortheme__body-imageuploader-wrap">
+
+                                    <div>
+                                            {this.props.values.floorTheme ? (
+                                                <img src={this.props.values.floorThemeUrl} style={{maxWidth: "100px", maxHeight: "50px"}} alt="floortheme"></img>
+                                            ): (
+                                                <div></div>
+                                            )}
+                                    </div>
+                                    <input
+                                            type="file"
+                                            name = "floorTheme"
+                                            onChange={ this.props.handleThemeFile }
+                                    />
+                                </div>
+                                
                             </div>
-                            
                         </div>
+                        
+
+                        
                     </div>
                 </div>
                 

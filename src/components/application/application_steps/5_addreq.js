@@ -35,11 +35,16 @@ class AdditionalRequests extends Component{
                         </div>
                         <div className="addrequest__heading">
                             Feel Free to tell us any other requests
+                            <img style={{width: "45px", marginLeft: "8px"}} src={bubble} alt="bubble"></img>
                         </div>
+                        
                         <div className="addrequest__formcontainer">
                             <input
+                            
+                                className="addrequest__formcontainer-input"
                                 type="text"
                                 name = "additionalRequest"
+                                placeholder="Type in any other requests you would like us to know, just press next to skip"
                                 onChange={ this.props.handleChange('additionalRequest') }
                             />
                         </div>

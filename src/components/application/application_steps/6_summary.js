@@ -43,7 +43,7 @@ class Summary extends Component{
 
                         <div className="summary__contents">
                             <label>floorPlan: </label>
-                            <img src= {this.props.values.floorPlanUrl} alt="floorplan-summary"></img>
+                            <img src= {this.props.values.floorPlanUrl} style={{maxWidth: "100px", maxHeight: "50px"}} alt="floorplan-summary"></img>
                         </div>
                         <div className="summary__contents">
                             <label>floorNumber: </label>
@@ -61,15 +61,15 @@ class Summary extends Component{
                             <label>floorAddress: </label>
                             {this.props.values.floorAddress}
                         </div>
-                        <div className="summary__contents">
+                        <div className="summary__contents" style={{display: "flex"}}>
                             <label>floorSelectedTheme : </label>
                             {this.props.values.floorSelectedTheme.length !== 0? 
                             this.props.values.floorSelectedTheme.map(items =>{
                                 return (
-                                    <div><img src={items} alt="selected-style"></img></div>
+                                    <div><img src={items} alt="selected-style" style={{width: "50px", height: "50px", marginRight: "20px"}} ></img></div>
                                 )
                             }) :
-                            (<img src={this.props.values.floorThemeUrl} alt='uploaded-style'></img>)
+                            (<img src={this.props.values.floorThemeUrl} style={{width: "50px", height: "50px"}} alt='uploaded-style'></img>)
                         }
                         </div>
         

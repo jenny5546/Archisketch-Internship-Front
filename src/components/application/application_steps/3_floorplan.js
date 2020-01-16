@@ -90,7 +90,7 @@ class FloorPlan extends Component{
                                             value = {this.props.values.floorSize}
                                         />
                                         
-                                        <select name="floorSizeUnit" style = {{width: "70px", height: "20px" , fontSize: "14px"}} onChange={this.props.handleChange('floorSizeUnit')}>
+                                        <select name="floorSizeUnit" style = {{width: "70px", height: "20px" , fontSize: "14px" , backgroundColor : "transparent"}} onChange={this.props.handleChange('floorSizeUnit')}>
                                             <option value="">Unit</option>
                                             <option value="m^2">m^2</option>
                                             <option value="ft^2">feet</option>
@@ -104,7 +104,7 @@ class FloorPlan extends Component{
                                     <label> &nbsp; &nbsp; Floor Height &nbsp;&nbsp;&nbsp;</label>
                                     <div style={{float: "right"}}>
                                     <input
-                                        style = {{width: "70px", marginRight: "20px" , fontSize: "18px"}}
+                                        style = {{width: "70px", marginRight: "20px" , fontSize: "18px", backgroundColor : "transparent" }}
                                         type="text"
                                         name = "floorHeight"
                                         onChange={ this.props.handleChange('floorHeight') }
