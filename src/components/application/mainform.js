@@ -23,7 +23,7 @@ class Application extends Component{
         floorPlan: null, //input
         floorPlanUrl: '',
         floorNumber: '', //input
-        floorSize: '', //input
+        floorSize: 0, //input
         floorSizeUnit: null, //select
         floorHeight: '', //input
         floorHeightUnit: null, //select

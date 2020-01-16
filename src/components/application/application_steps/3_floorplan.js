@@ -10,7 +10,7 @@ class FloorPlan extends Component{
         e.preventDefault();
 
         (this.props.values.floorPlan === null) || 
-        (this.props.values.floorSize === '') || 
+        (this.props.values.floorSize === 0) || 
         (this.props.values.floorNumber ==='') ? 
         alert('Please fill in the required questions properly'): this.props.nextStep();
         
@@ -40,6 +40,7 @@ class FloorPlan extends Component{
                         <div className="floorplan__heading">
                             Provide Information about your Floor 
                             <img style={{width: "45px", marginLeft: "8px"}} src={bubble} alt="bubble"></img>
+                            <p1 style={{marginLeft: "130px", fontSize: "13px", fontWeight: "bolder", color: "rgb(16, 73, 100)"}}> (* Required) </p1>
                         </div>
                         
                         <div className="floorplan__formcontainer">
@@ -48,7 +49,7 @@ class FloorPlan extends Component{
                                 <label>* Upload Floor Plan</label>
                                 <div>
                                     {this.props.values.floorPlan ? (
-                                        <img src={this.props.values.floorPlanUrl} alt="floorplan" style={{width: "200px", maxHeight: "200px", marginTop: "10px"}}></img>
+                                        <img src={this.props.values.floorPlanUrl} alt="floorplan" style={{width: "230px", height: "150px", marginTop: "10px"}}></img>
                                     ): (
                                         <div> </div>
                                     )}
@@ -130,6 +131,7 @@ class FloorPlan extends Component{
                                         type="text"
                                         name = "floorAddress"
                                         onChange={ this.props.handleChange('floorAddress') }
+                                        value = {this.props.values.floorAddress}
                                     />
                                     </div>
                                 </div>

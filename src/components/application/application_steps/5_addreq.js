@@ -44,6 +44,7 @@ class AdditionalRequests extends Component{
                                 className="addrequest__formcontainer-input"
                                 type="text"
                                 name = "additionalRequest"
+                                value= {this.props.values.additionalRequest}
                                 placeholder="Type in any other requests you would like us to know, just press next to skip"
                                 onChange={ this.props.handleChange('additionalRequest') }
                             />

@@ -50,7 +50,7 @@ class FloorTheme extends Component{
                             <div className="floortheme__body-imageuploader" style={{display: "flex"}} >
                                 
                                 <div className="floortheme__body-imageuploader-heading">
-                                    <p1 style={{fontSize: "18px", fontWeight: "bolder", color: "#5894a3"}}>Or</p1> Upload your Own Style
+                                    <p1 style={{fontSize: "18px", fontWeight: "bolder", color: "#5894a3"}}>Or &nbsp;</p1> Upload your Own Style
                                 </div>
                                 <div className="floortheme__body-imageuploader-wrap">
 

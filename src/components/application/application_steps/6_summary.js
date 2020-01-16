@@ -14,6 +14,21 @@ class Summary extends Component{
         this.props.prevStep();
     }
 
+    calculateCost=(type,size)=>{
+        if (type==='Residential'){
+            if (size <= 300) return(<p1>$99</p1>)
+            if (size > 300 && size<= 600) return(<p1>$199</p1>)
+            if (size > 600 && size <= 900) return(<p1>$299</p1>)
+            else return(<p1>$499</p1>)
+        }
+        else{
+            if (size <= 300) return(<p1>$199</p1>)
+            if (size > 300 && size<= 600) return(<p1>$299</p1>)
+            if (size > 600 && size <= 900) return(<p1>$499</p1>)
+            else return(<p1>$699</p1>)
+        }
+    }
+
     render(){
         return(
             <div className="application">
@@ -31,56 +46,82 @@ class Summary extends Component{
 
                     <div className="summary">
                         {/* 불러오기 */}
-                        <div className="summary__contents">
-                            <label>floorType: </label>
-                            {this.props.values.floorType} 
+
+                        <div className="summary__left">
+                            <div className="summary__left__type">
+                                <label className="summary__left__type-label">
+                                    Floor Type : &nbsp;
+                                </label>
+                                <div className="summary__left__type-value">
+                                    {this.props.values.floorType} 
+                                    {(this.props.values.floorType) === "Commercial" ? '( ' : ''} 
+                                    {(this.props.values.floorType) === "Commercial" ? (this.props.values.commercialType)  : ''} 
+                                    {(this.props.values.floorType) === "Commercial" ? ' )' : ''} 
+                                </div>
+                                
+                            </div>
+    
+    
+                            <div className="summary__left__plan">
+
+                                <div className="summary__left__plan-img">
+                                        <img src= {this.props.values.floorPlanUrl} style={{width: "150px", height: "150px", marginTop: "20px"}} alt="floorplan-summary"></img>
+                                    {/* <label className="summary__contents-label">Uploaded Floor Plan</label> */}
+                                </div>
+
+                                <div className="summary__left__plan-info">
+                                    <div className="summary__left__plan-info-contents">
+                                        <label className="summary__left__plan-info-contents--label">Number of Floors:&nbsp; </label>
+                                        {this.props.values.floorNumber}
+                                    </div>
+                                    <div className="summary__left__plan-info-contents">
+                                        <label className="summary__left__plan-info-contents--label">Size of Floor: &nbsp; </label>
+                                        {this.props.values.floorSize} {this.props.values.floorSizeUnit}
+                                    </div>
+                                    <div className="summary__left__plan-info-contents">
+                                        <label className="summary__left__plan-info-contents--label">Height of Floor:&nbsp; </label>
+                                        {this.props.values.floorHeight} {this.props.values.floorHeightUnit}
+                                    </div>
+                                    <div className="summary__left__plan-info-contents">
+                                        <label className="summary__left__plan-info-contents--label">Address of Floor: &nbsp;</label>
+                                        {this.props.values.floorAddress}
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            
+                            <div className="summary__left__theme">
+                                <label className="summary__left__theme-label">Floor Themes: &nbsp;  </label>
+                                {this.props.values.floorSelectedTheme.length !== 0? 
+                                this.props.values.floorSelectedTheme.map(items =>{
+                                    return (
+                                        <div><img src={items} alt="selected-style" style={{width: "80px", height: "50px", marginLeft: "10px"}} ></img></div>
+                                    )
+                                }) :
+                                (<img src={this.props.values.floorThemeUrl} style={{width: "50px", height: "50px"}} alt='uploaded-style'></img>)
+                            }
+                            </div>
                         </div>
                         
-                        <div className="summary__contents">
-                            <label>commercialType: </label>
-                            {this.props.values.commercialType}
+                        <div className="summary__right">
+                            <div className="summary__right__add">
+                                <label className="summary__right__add-label">Additional Requests: &nbsp; </label>
+                                {this.props.values.additionalRequest} 
+                            </div>
+                            <div className="summary__right__contact">
+                                <label className="summary__right__contact-label">Contact Information: &nbsp; </label>
+                                jenny5546@naver.com
+                            </div>
+                            <div className="summary__right__cost">
+                                <label className="summary__right__cost-label">Cost Total: &nbsp; </label>
+                                <div className="summary__right__cost-value">
+                                    {this.calculateCost(this.props.values.floorType,this.props.values.floorSize)} 
+                                    ({this.props.values.floorType}, {this.props.values.floorSize} {this.props.values.floorSizeUnit})
+                                </div>
+                                
+                            </div>
                         </div>
-
-                        <div className="summary__contents">
-                            <label>floorPlan: </label>
-                            <img src= {this.props.values.floorPlanUrl} style={{maxWidth: "100px", maxHeight: "50px"}} alt="floorplan-summary"></img>
-                        </div>
-                        <div className="summary__contents">
-                            <label>floorNumber: </label>
-                            {this.props.values.floorNumber}
-                        </div>
-                        <div className="summary__contents">
-                            <label>floorSize:  </label>
-                            {this.props.values.floorSize} {this.props.values.floorSizeUnit}
-                        </div>
-                        <div className="summary__contents">
-                            <label>floorHeight: </label>
-                            {this.props.values.floorHeight} {this.props.values.floorHeightUnit}
-                        </div>
-                        <div className="summary__contents">
-                            <label>floorAddress: </label>
-                            {this.props.values.floorAddress}
-                        </div>
-                        <div className="summary__contents" style={{display: "flex"}}>
-                            <label>floorSelectedTheme : </label>
-                            {this.props.values.floorSelectedTheme.length !== 0? 
-                            this.props.values.floorSelectedTheme.map(items =>{
-                                return (
-                                    <div><img src={items} alt="selected-style" style={{width: "50px", height: "50px", marginRight: "20px"}} ></img></div>
-                                )
-                            }) :
-                            (<img src={this.props.values.floorThemeUrl} style={{width: "50px", height: "50px"}} alt='uploaded-style'></img>)
-                        }
-                        </div>
-        
-                        <div className="summary__contents">
-                            <label>additionalRequest: </label>
-                            {this.props.values.additionalRequest} 
-                        </div>
-                        <div className="summary__contents">
-                            <label>contactInfo: </label>
-                            jenny5546@naver.com
-                        </div>
+                        
                     </div>
                      
                 </div>

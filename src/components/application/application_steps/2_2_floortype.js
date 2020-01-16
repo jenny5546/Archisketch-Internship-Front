@@ -7,8 +7,9 @@ import bubble from '../../../static/img/application/bubble.png';
 class SubFloorType extends Component{
     
     saveAndContinue = (e) =>{
-        e.preventDefault()
-        this.props.nextStep()
+        e.preventDefault();
+        (this.props.values.commercialType === '') ? (alert('Please Choose or Specify the Commercial Type')) : (this.props.nextStep());
+        
     }
     back  = (e) => {
         e.preventDefault();
