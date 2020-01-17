@@ -106,7 +106,7 @@ class Summary extends Component{
                         <div className="summary__right">
                             <div className="summary__right__add">
                                 <label className="summary__right__add-label">Additional Requests: &nbsp; </label>
-                                {this.props.values.additionalRequest} 
+                                <p>{this.props.values.additionalRequest} </p>
                             </div>
                             <div className="summary__right__contact">
                                 <label className="summary__right__contact-label">Contact Information: &nbsp; </label>
